@@ -111,3 +111,17 @@ $('.row2 .con .item').on("click",function(){
       }
   });
 
+  function scrollToBottom() {
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+// 페이지가 처음으로 로드될 때만 아래로 스크롤
+window.addEventListener('DOMContentLoaded', function() {
+    scrollToBottom();
+});
+
+// 페이지가 새로고침될 때마다 위로 스크롤
+window.addEventListener('beforeunload', function() {
+    window.scrollTo(0, 0);
+});
+
